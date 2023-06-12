@@ -25,8 +25,9 @@ function App() {
     console.log("글자의 첫번째 문자를 들고 오는 중입니다");
     return name[0];
   }
-  // useMemo를 통해서 name값이 바뀔때만 실행할 수 있게 
 
+  // useMemo를 통해서 name값이 바뀔때만 실행할 수 있게 
+  const memoTakeWord = useMemo(()=>takeWord(name), [name])
 
   return (
     <div className="App">
@@ -37,7 +38,7 @@ function App() {
         />
       <button onClick={()=>{setName(input)}}>확인</button>
       <p>이름의 길이:{memoCountName}</p>
-      <p>{takeWord("홍길동")}</p>
+      <p>{memoTakeWord}</p>
 
     </div>
   );
