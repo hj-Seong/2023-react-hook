@@ -49,8 +49,13 @@ function App() {
     console.log(name);
   },[name])
 
-  // onClick을 useCallback으로 작성하세요
-  const onClick = useCallback(()=>{},[])
+  // onClic의 내용을 useCallback으로 작성하세요
+  const onClick = useCallback(()=>{
+    // input 값을 받아와서 넣어야 하기 때문에,
+    // 사실상 useCallback을 사용해도 동일하다.
+    // 자주 바뀌지 않는 값을 사용할때, useCallback 사용
+    setName(input)
+  },[input])
 
 
   return (
@@ -60,7 +65,7 @@ function App() {
       <input type='text' 
         onChange={onChange}
         />
-      <button onClick={()=>{setName(input)}}>확인</button>
+      <button onClick={onClick}>확인</button>
       <p>이름의 길이:{memoCountName}</p>
       <p>{memoTakeWord}</p>
 
