@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from 'react'
 import StatusBar from './components/StatusBar';
 import SaveButton from './components/SaveButton';
 import InputBox from './components/InputBox';
+import TestBox from './components/TestBox';
 
 function App() {
   // onChange와 연결 되어있는 값은 바로 사용하기보단 : 연결된 값은 언제든지 바뀔수있는값
@@ -78,6 +79,9 @@ function App() {
       
       <hr />
       <InputBox />
+
+      <hr />
+      <TestBox />
 
     </div>
   );
