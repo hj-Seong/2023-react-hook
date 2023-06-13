@@ -7,6 +7,11 @@ export default function InputBox() {
   // 전화번호 받아오는 useFromInput
   const phoneProps = useFormInput("");
 
+  // 다양한값 확인
+  const textProps = useFormInput("");
+  const emailProps = useFormInput("");
+  const dateProps = useFormInput("");
+
   // 확정된 이름을 기록하는 state
   const [name, setName] = useState("");
 
@@ -31,12 +36,12 @@ export default function InputBox() {
         <p>이름 : {name} </p>
 
         {/** useFormInput 을 사용하여 아래 태그의 값을 가져오세요 */}
-        <textarea cols="30" rows="10"></textarea>
-        <input type="email"  /><br />
-        <input type="date" />
-        <p></p>
-        <p></p>
-        <p></p>
+        <textarea {...textProps } cols="30" rows="10"></textarea>
+        <input {...emailProps } type="email"  /><br />
+        <input {...dateProps } type="date" />
+        <p>{textProps.value}</p>
+        <p>{emailProps.value}</p>
+        <p>{dateProps.value}</p>
     </div>
   )
 }
